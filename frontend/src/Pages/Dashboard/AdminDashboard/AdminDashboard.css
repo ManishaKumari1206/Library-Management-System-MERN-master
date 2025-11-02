@@ -1,0 +1,341 @@
+.dashboard {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: wheat;
+  position: relative;
+}
+
+.dashboard-card {
+  font-family: sans-serif;
+  width: 80vw;
+  height: 90vh;
+  margin: 60px auto;
+  display: flex;
+  background-color: #fefaf5;
+  border-radius: 15px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-options {
+  background-color: rgb(24, 33, 62); /* Dark Blue */
+  color: wheat;
+  display: flex;
+  flex-direction: column;
+  flex: 0.25;
+  width: 40vw;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.dashboard-logo {
+  margin-top: 50px;
+  margin-bottom: 50px !important;
+  color: rgb(234, 68, 74); /* Red Accent */
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dashboard-option {
+  text-decoration: none;
+  padding: 15px;
+  border-bottom: 0.5px solid salmon;
+  border-top: 1px solid rgb(234, 68, 74, 0.5);
+  color: #ffff;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dashboard-option:hover {
+  color: rgb(234, 68, 74);
+  border-left: 5px solid rgb(234, 68, 74);
+  transition: all 0.5s ease;
+  background-color: #ddd;
+}
+
+.dashboard-option.clicked {
+  color: rgb(234, 68, 74);
+  border-left: 5px solid rgb(234, 68, 74);
+  transition: all 0.5s ease;
+  background-color: #ddd;
+}
+
+.dashboard-option-content {
+  display: flex;
+  flex: 0.75;
+  width: 80vw;
+}
+
+.dashboard-option-icon {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.dashboard-option-title {
+  text-align: left;
+  margin: 10px 25px !important;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.dashboard-title-line {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid rgb(245 239 239);
+  line-height: 2px;
+  margin-bottom: 10px !important;
+}
+
+/* Responsive adjustments for mobile view */
+@media screen and (min-width: 768px) {
+  .sidebar-toggler {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-card {
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0 !important;
+  }
+  /* ... (rest of sidebar mobile styles) ... */
+  .dashboard-options {
+    display: none;
+  }
+  .dashboard-options.active {
+    /* Styles for when mobile sidebar is open */
+    display: flex;
+    position: fixed;
+    z-index: 5;
+  }
+  .dashboard-option-content {
+    flex: 1 !important;
+  }
+}
+
+/* 1. Content Container Styling - applied to all main views */
+.dashboard-addbooks-content,
+.dashboard-addmember-content,
+.dashboard-transactions-content,
+.admin-profile, 
+.dashboard-getmember-content, 
+.dashboard-return-content,
+.dashboard-shortinfo-content { /* Added Short Info for completeness */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  padding: 20px; 
+  background-color: #fcfcfc;
+  height: 100%; 
+}
+
+/* 2. Grid Wrapper for Two-Column Layout (Used by Forms and Profile) */
+.form-grid-wrapper,
+.profile-details-grid { 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 10px 0; 
+  margin-top: 15px; 
+}
+
+/* 3. Form Field/Detail Card Styling - The "Box" itself */
+.addbook-form-group,
+.addmember-form-group,
+.transaction-form-group,
+.profile-detail-card,
+.full-width-form-field {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.1s;
+    overflow: hidden;
+}
+
+.addbook-form-group:hover,
+.addmember-form-group:hover,
+.transaction-form-group:hover,
+.profile-detail-card:hover {
+    transform: translateY(-1px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Label (Header) Styling - The Dark Blue Bar */
+.addbook-form-label,
+.addmember-form-label,
+.transaction-form-label,
+.detail-label {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: rgb(24, 33, 62); /* Dark Blue */
+  padding: 10px 15px;
+  font-size: 12px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 5. Input/Value Styling - The White Content Area */
+.addbook-form-input,
+.addmember-form-input,
+.transaction-form-input,
+.detail-value,
+.semanticdropdown select {
+  width: 100%;
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 500; 
+  color: #333;
+  background-color: #fff;
+  flex-grow: 1;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Dropdown specific styles for the arrow */
+.semanticdropdown select { 
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23333'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.5em 1.5em;
+  cursor: pointer;
+}
+
+/* 7. Full Width Elements (Span both grid columns) */
+.full-width-form-field,
+.full-width {
+    grid-column: 1 / -1; 
+}
+
+.addbook-submit,
+.addmember-submit,
+.transaction-form-submit {
+    background-color: rgb(24, 33, 62); 
+    
+    /* Text Color: White */
+    color: #ffffff; 
+    
+    /* Border: None in the default state */
+    border: none; 
+    
+    padding: 10px 15px; 
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 30px; 
+    
+    /* Rounded corners */
+    border-radius: 8px;
+    
+    cursor: pointer;
+    grid-column: 1 / -1; 
+    
+    /* Subtle box-shadow for a slightly raised effect */
+    box-shadow: 0 3px 5px -1px rgba(24, 33, 62, 0.4),
+                0 6px 10px 0px rgba(24, 33, 62, 0.14);
+    
+    transition: all ease 0.3s;
+    
+    /* Ensure the text is capitalized */
+    text-transform: uppercase;
+}
+
+.addbook-submit:hover,
+.addmember-submit:hover,
+.transaction-form-submit:hover {
+    /* HOVER STATE: White background, Dark Blue text/border (as requested) */
+    
+    /* Hover state: background changes to White */
+    background-color: #ffffff;
+    
+    /* Text Color: Changes to the Dark Blue */
+    color: rgb(24, 33, 62); 
+    
+    /* Border: Dark Blue */
+    border: 2px solid rgb(24, 33, 62); 
+    
+    /* Box Shadow: Use a standard dark shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.required-field {
+  color: #ffe566; /* Light Yellow for required star */
+}
+.admindashboard-table {
+  font-family: 'Arial', sans-serif;
+  border-collapse: separate; 
+  border-spacing: 0;
+  width: 95%;
+  margin: 20px auto 50px auto; 
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; 
+  overflow: hidden; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Headers (Dark Theme) */
+.admindashboard-table th {
+  padding: 12px 8px;
+  text-align: center;
+  background-color: rgb(24, 33, 62); /* Dark Blue */
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Cells */
+.admindashboard-table td {
+  border-bottom: 1px solid #f0f0f0; 
+  padding: 10px 8px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #ffffff; 
+  color: #444;
+}
+
+/* Stripe rows for better readability */
+.admindashboard-table tr:nth-child(even) td {
+  background-color: #f8f8f8; 
+}
+
+/* Hover effect on table rows */
+.admindashboard-table tr:hover td {
+  background-color: #f3f3f3; 
+}
+
+/* Remove border from the last row's cells */
+.admindashboard-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Forms and Profile switch to single column on small screens */
+  .form-grid-wrapper,
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .admindashboard-table {
+      width: 100%; /* Use full width on mobile */
+      margin: 10px auto;
+      font-size: 12px;
+  }
+}

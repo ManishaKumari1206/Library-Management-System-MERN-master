@@ -1,0 +1,169 @@
+/*Desktop View*/
+.header {
+    display: flex;
+    justify-content: space-between; /* Pushes logo-nav to left, center-and-right-nav-container to middle/right, mobile-menu to far right */
+    align-items: center; /* Vertically centers all items */
+    padding: 10px 40px;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: #808080;
+    box-shadow: 0 1px 4px rgba(146,161,176,.15);
+    top: 0%;
+}
+
+/* Container for the "Library" button */
+.logo-nav {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Your .nav-left and .library-link styles (no changes needed here) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* NEW: Styles for the container holding search and right nav */
+.center-and-right-nav-container {
+    display: flex; /* Make this a flex container */
+    align-items: center; /* Vertically align its contents (search & nav-right) */
+    flex-grow: 1; /* Allow this container to take up remaining space */
+    justify-content: center; /* NEW: This will center the search input within this container */
+    /* Add some gap if needed between search and nav-right */
+    gap: 30px; /* Example gap between search and nav-right */
+}
+
+/* Search input styles */
+.search-input {
+    /* flex-grow: 1; /* Not needed here if using justify-content: center on parent */
+    width: 400px; /* Give it a fixed or max width so it doesn't take all space */
+    max-width: 50%; /* You can use a percentage or fixed width */
+    height: 40px;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: 0; /* Remove side margins, parent gap handles spacing */
+}
+
+/* Container for Home, Books, Sign In (now inside center-and-right-nav-container) */
+.nav-right {
+    display: flex; /* Make this a flex container */
+    align-items: center; /* Vertically center its content */
+    flex-shrink: 0; /* Prevents it from shrinking */
+}
+
+.nav-options {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+    margin: 0;
+}
+
+/* Styles for Home, Books, Sign In links */
+.option .react-router-dom-link,
+.option a {
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all ease 0.5s;
+}
+
+.option .react-router-dom-link:hover,
+.option a:hover {
+    color:#C0C0C0;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu {
+    display: none; /* Hide by default on desktop */
+    cursor: pointer;
+}
+
+/* Media Queries (adjust for the new container) */
+@media (min-width: 768px) {
+    /* Ensure the mobile menu is hidden on desktop */
+    .mobile-menu {
+        display: none !important;
+    }
+    /* Reset any mobile-specific layout for desktop */
+    .center-and-right-nav-container {
+        display: flex; /* Re-apply flex on desktop */
+    }
+    .nav-right {
+        display: flex; /* Ensure it's displayed on desktop */
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 0px 10px;
+        flex-wrap: wrap; /* Allows items to wrap for mobile */
+        justify-content: space-between; /* Distribute space */
+    }
+    .logo-nav {
+        order: 1;
+    }
+    .mobile-menu {
+        display: block; /* Show menu icon on mobile */
+        order: 3;
+        margin: auto 0;
+    }
+    /* Hide the combined container on mobile, it will be replaced by mobile menu */
+    .center-and-right-nav-container {
+        display: none; /* Hide this on mobile, nav-options takes over */
+    }
+
+    /* Mobile-specific adjustments for the expanded menu */
+    .nav-options {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .nav-options.active {
+        display: flex;
+        background: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 100;
+        height: auto;
+        padding: 20px 0;
+    }
+    .option {
+        width: 100%;
+        padding: 15px 0;
+        margin: 0;
+    }
+    .menu-icon {
+        width: 45px;
+        height: 45px;
+        color: rgb(233,83,75);
+        background-color: rgb(246, 233, 202);
+        border-radius: 5px;
+        margin:0px 5px 0px 10px;
+    }
+}

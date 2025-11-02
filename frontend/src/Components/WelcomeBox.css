@@ -1,0 +1,35 @@
+*{
+    margin-bottom: 0px!important;
+}
+
+.welcome-box {
+    width: 100%;
+    height: auto;
+    background-color: #f7ebdf; /* A slightly less saturated cream color */
+    text-align: center;
+    padding: 30px 0; /* Increased top and bottom padding for more breathing room */
+}
+
+.welcome-title {
+    font-family: 'Georgia', serif; /* Changed to a classic, readable serif font */
+    font-size: 56px; /* Increased font size for greater impact */
+    font-weight: 700;
+    color: #4b3832; /* Changed to a rich, dark brown that complements the cream background */
+    margin: 0; /* Removes default margins */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* A subtle, softer shadow */
+}
+
+.welcome-message {
+    font-family: 'Helvetica', sans-serif; /* A clean, modern sans-serif font for contrast */
+    font-size: 30px;
+    font-weight: 590;
+    color: #6a5c53; /* A slightly lighter shade of brown for the message */
+    margin: 10px 0; /* Provides spacing above and below */
+}
+
+.welcome-submessage {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #8c8273; /* A neutral, warm grey for the sub-message */
+}

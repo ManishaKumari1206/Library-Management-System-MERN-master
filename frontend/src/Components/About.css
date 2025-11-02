@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.about-box{
+    background-color: #808080;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px){
+    .about-data{
+        display: grid;
+    }   
+    .about-data p{
+        margin-left: 16px;
+        margin-right: 16px;
+        font-size: 13px;
+        font-family:'Poppins', sans-serif ;
+        text-align: justify;
+        padding: 15px;
+        color: #FFFFFF; /* Updated to pure white */
+        font-weight: bold; /* Made the text bold */
+    }
+}
+
+/* Desktop View */
+.about-title {
+  position: relative;
+  color:#000000; /* Changed to White for high contrast */
+  text-align: center;
+  font-size: 32px;
+  padding: 25px;
+  font-weight: bold; /* Ensures the text is bold */
+  
+}
+
+.about-img img{
+    width: 100%;
+    max-width: 700px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-data p {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    text-align: justify;
+    color: #FFFFFF; /* Updated color: pure white */
+    padding: 15px;
+    font-weight: 700; /* Made the text bold */
+  }
+  .about-data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* Increase the maxi-width to expand the content block */
+    max-width: 1400px; /* Adjust this value as needed */
+    margin: 0 auto;
+  }
+}

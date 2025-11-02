@@ -1,0 +1,89 @@
+/* .slider{
+    width: 100%;
+    height: auto;
+}
+
+img{
+    width: auto;
+    height: 500px;
+}
+
+/* Mobile View */
+/* @media screen and (max-width:768px){
+    img{
+        height: 250px;
+    }
+} 
+    /* Styles for the main slider container */
+.slider {
+  width: 100%;
+  height: auto;
+}
+
+/* Styles for the images within the slider */
+img {
+  width: auto;
+  height: 500px;
+}
+
+/* Styles for the text captions on the slider */
+.carousel-caption {
+  /* Added: Semi-transparent black background for better text contrast */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Added: Padding around the text to give it some breathing room */
+  padding: 15px 25px;
+  /* Added: Rounded corners for a softer look */
+  border-radius: 8px;
+  /* Added: Ensure the text is white/light for contrast against the dark background */
+  color: #fff;
+  /* Added: Position the caption to be centered horizontally */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Added: Optionally, you can adjust the bottom position if needed */
+  bottom: 20%;
+  /* Added: Ensure the caption width is not too wide, making it a concise box */
+  max-width: 600px;
+  width: 90%;
+  
+  /* ADDED: THIS WILL CENTER ALL THE TEXT INSIDE THE CONTAINER */
+  text-align: center;
+}
+
+/* Added: Styles specifically for the heading within the carousel caption */
+.carousel-caption h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Added: Styles specifically for the paragraph within the carousel caption */
+.carousel-caption p {
+  font-size: 1.1em;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  img {
+    height: 250px;
+  }
+
+  /* Adjust caption for smaller screens */
+  .carousel-caption {
+    padding: 10px 15px;
+    max-width: 90%;
+    bottom: 10%;
+    text-align: center;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.5em;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9em;
+  }
+}
